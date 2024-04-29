@@ -25,8 +25,34 @@ if (age < 18) {
 
   // Output del prezzo finale
   console.log("Prezzo del biglietto: " + totalPrice.toFixed(2) + " €");
+
+  const prezzoFormattato = totalPrice.toFixed(2);
+document.getElementById("risultato").innerHTML = `
+    <p>Recap dei dati:</p>
+    <ul>
+        <li>Chilometri da percorrere: ${km} km</li>
+        <li>Età del passeggero: ${age} anni</li>
+    </ul>
+    <p>Il prezzo del biglietto è di <strong>${prezzoFormattato} €</strong>.</p>
+`;
 }
 
 // Aggiunta dell'evento click al bottone
 const calcolaBtn = document.getElementById('calcolaBtn');
 calcolaBtn.addEventListener('click', calcolaPrezzo);
+
+
+
+const prezzoFormattato = totalPrice.toFixed(2);
+document.getElementById("risultato").innerHTML = `
+    <p>Recap dei dati:</p>
+    <ul>
+        <li>Chilometri da percorrere: ${km} km</li>
+        <li>Età del passeggero: ${age} anni</li>
+    </ul>
+    <p>Il prezzo del biglietto è di <strong>${prezzoFormattato} €</strong>.</p>
+`;
+
+function reset() {
+    document.getElementById("anullaBtn").reset();
+}
